@@ -3,6 +3,7 @@
 namespace ChrisComposer\Alibaba;
 
 use Illuminate\Filesystem\Filesystem;
+use Illuminate\Support\Collection;
 use Illuminate\Support\ServiceProvider;
 
 class AlibabaOssServiceProvider extends ServiceProvider
