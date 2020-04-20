@@ -27,8 +27,8 @@
     "extra": {
         "laravel": {
             "providers": [
-                "ChrisComposer\\Alibaba\\AlibabaDingServiceProvider.php",
-                "ChrisComposer\\Alibaba\\AlibabaOssServiceProvider.php"
+                "ChrisComposer\\Alibaba\\AlibabaDingServiceProvider",
+                "ChrisComposer\\Alibaba\\AlibabaOssServiceProvider"
             ]
         }
     }
