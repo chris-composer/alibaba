@@ -8,6 +8,7 @@ use AlibabaCloud\Client\AlibabaCloud;
 use AlibabaCloud\Client\Exception\ClientException;
 use AlibabaCloud\Client\Exception\ServerException;
 use ChrisComposer\Alibaba\Sms\Models\LogSms;
+use Illuminate\Support\Facades\DB;
 
 class SmsServer
 {
@@ -86,7 +87,10 @@ class SmsServer
         $options['query']['TemplateParam'] = json_decode($options['query']['TemplateParam'], true);
         $options['extra'] = $extra;
 
-        LogSms::query()->create([
+        $connection = config('alibaba_sms.table.log.connection');
+        $table = config('alibaba_sms.table.log.table_name');
+
+        DB::connection($connection)->table($table)->query()->create([
             'type' => $extra['type'],
             'query' => json_encode($options, JSON_UNESCAPED_UNICODE),
             'response' => json_encode($return, JSON_UNESCAPED_UNICODE),

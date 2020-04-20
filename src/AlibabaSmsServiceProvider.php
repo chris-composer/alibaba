@@ -21,11 +21,11 @@ class AlibabaSmsServiceProvider extends ServiceProvider
         $this->publishes([
             __DIR__ . '/../database/migrations/' . $this->file_name => $this->getMigrationFileName($filesystem)
         ], 'migrations');
-        
+
         # 发布短信登录 demo
         $this->publishes([
-            __DIR__ . '/Ding/Controllers/LoginSmsController.php' => app_path('Http/Controllers/LoginSmsController.php'),
-            __DIR__ . '/Ding/Controllers/ComLoginSmsController.php' => app_path('Http/Controllers/ComLoginSmsController.php'),
+            __DIR__ . '/Sms/Controllers/LoginSmsController.php' => app_path('Http/Controllers/LoginSmsController.php'),
+            __DIR__ . '/Sms/Controllers/ComLoginSmsController.php' => app_path('Http/Controllers/ComLoginSmsController.php'),
         ], 'controller');
 
         # 发布 model demo
