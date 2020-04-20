@@ -28,7 +28,8 @@
         "laravel": {
             "providers": [
                 "ChrisComposer\\Alibaba\\AlibabaDingServiceProvider",
-                "ChrisComposer\\Alibaba\\AlibabaOssServiceProvider"
+                "ChrisComposer\\Alibaba\\AlibabaOssServiceProvider",
+                "ChrisComposer\\Alibaba\\AlibabaSmsServiceProvider"
             ]
         }
     }
