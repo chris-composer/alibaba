@@ -11,7 +11,7 @@ class LoginDingController extends ComLoginDingController
     protected $is_get_millisecond = false;
     
     /**
-     * 根据扫码获取的 loginTmpCode 请求阿里云获取个人信息码
+     * 扫码获取 loginTmpCode 后，请求阿里云获取个人信息码
      * @param Request $request
      *
      * @return mixed

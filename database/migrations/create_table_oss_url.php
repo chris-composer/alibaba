@@ -21,10 +21,9 @@ class CreateTableOssUrl extends Migration
         }
 
         Schema::connection($connection)->create($tableName, function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->string('name');
-            $table->string('guard_name');
-            $table->timestamps();
+            $table->string('md5_file', 100)->nullable();
+            $table->string('oss_url', 255)->nullable();
+            $table->timestampsTz(); // 相当于可空且带时区的 created_at 和 updated_at TIMESTAMP
         });
     }
 

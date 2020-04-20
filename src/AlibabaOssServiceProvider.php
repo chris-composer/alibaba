@@ -12,13 +12,20 @@ class AlibabaOssServiceProvider extends ServiceProvider
 
     public function boot(Filesystem $filesystem)
     {
+        # 发布配置
         $this->publishes([
             __DIR__ . '/../config/alibaba_oss.php' => config_path('alibaba_oss.php'),
         ], 'config');
 
+        # 发布数据库迁移
         $this->publishes([
             __DIR__ . '/../database/migrations/' . $this->file_name => $this->getMigrationFileName($filesystem)
         ], 'migrations');
+
+        # 发布 model demo
+        $this->publishes([
+            __DIR__ . '/OSS/Models/OssUrl.php' => app_path('Models/OssUrl.php')
+        ], 'models');
     }
 
     public function register()
