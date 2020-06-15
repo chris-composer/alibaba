@@ -1,0 +1,36 @@
+{
+    "name": "chris-composer/alibaba",
+    "description": "阿里巴巴的 composer 包，含 OSS，钉钉，短信的封装",
+    "license": "LGPL-3.0+",
+    "authors": [
+        {
+            "name": "gale boy",
+            "email": "983943198@qq.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "require": {
+        "php": "^7.1.3",
+        "ext-curl": "*",
+        "ext-json": "*",
+        "chris-composer/guzzle-http": "^0.1.0",
+        "alibabacloud/sdk": "^1.7",
+        "aliyuncs/oss-sdk-php": "^2.3",
+        "tymon/jwt-auth": "^1.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "ChrisComposer\\Alibaba\\": "src"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "ChrisComposer\\Alibaba\\AlibabaDingServiceProvider",
+                "ChrisComposer\\Alibaba\\AlibabaOssServiceProvider",
+                "ChrisComposer\\Alibaba\\AlibabaSmsServiceProvider"
+            ]
+        }
+    }
+}
